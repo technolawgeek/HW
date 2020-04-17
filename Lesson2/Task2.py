@@ -17,10 +17,6 @@ list = [input('Введите значение №1: '),
         ]
 print(list)
 
-for key, value in enumerate(list[:-1:]):
-    if key % 2 == 1:
-        continue
-    temp = list[key]
-    list[key] = list[key + 1]
-    list[key + 1] = temp
+for key, value in enumerate(list[0:-1:2]):
+    list[key * 2], list[key * 2 + 1] = list[key * 2 + 1], list[key * 2]
 print(list)
