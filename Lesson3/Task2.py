@@ -16,7 +16,7 @@ def greeting():
     phone = input("Your phone number?\n")
 
     return print(f'Ok now please check the data\n'
-                 f'Name: {name}\n'
+                 f'Name: {name}\n' 
                  f'Surname: {surname}\n'
                  f'Date of birth: {date_of_birth}\n'
                  f'Hometown: {city}\n'

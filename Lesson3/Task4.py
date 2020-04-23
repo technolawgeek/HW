@@ -9,3 +9,24 @@
 в степень с помощью оператора **. Второй — более сложная реализация без
 оператора **, предусматривающая использование цикла.
 """
+
+
+def my_func1(x: float, y: int):
+    result = 1
+    for _1 in range(abs(y)):
+        result *= x
+    return result if y >= 0 else 1/result
+
+
+def my_func2(x: float, y: int):
+    return x ** y
+
+
+print(my_func1(3, 3))
+print(my_func2(3, 3))
+print(my_func1(3, -3))
+print(my_func2(3, -3))
+print(my_func1(0, 3))
+print(my_func2(0, 3))
+print(my_func1(3, 0))
+print(my_func2(3, 0))
