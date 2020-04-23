@@ -14,4 +14,20 @@
 например, my_list = [7, 5, 3, 3, 2].
 """
 
-print('Не успел пока сделать')
+
+def bubble_sort(nums):
+    charger = True
+    while charger:
+        charger = False
+        for i in range(len(nums) - 1):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                charger = True
+
+
+rate_list = [1, 4, 6, 8, 9]
+print("Вот список -", rate_list)
+rate_list.append(int(input("Введите рейтинговое число, чтобы добавить в список: ")))
+bubble_sort(rate_list)
+print(rate_list)
+
