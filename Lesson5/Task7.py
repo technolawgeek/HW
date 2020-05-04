@@ -21,3 +21,28 @@
 
 Подсказка: использовать менеджеры контекста.
 """
+
+import json
+import os
+
+db1 = os.path.join(os.path.dirname(__file__), 'task7.txt')
+db2 = os.path.join(os.path.dirname(__file__), 'task7.json')
+db_dict_average = {'average': 0}
+db_dict_all = {}
+
+with open(db1, 'r', encoding='UTF-8') as file1:
+    for line in file1:
+        tmp = line.split(' ')
+        profit = int(tmp[2]) - int(tmp[3])
+        db_dict_all[tmp[0]] = profit
+        if profit < 0:
+            continue
+        else:
+            db_dict_average['average'] += profit
+    db_dict_average['average'] = db_dict_average['average'] / len(db_dict_all)
+    list = (db_dict_all, db_dict_average)
+
+with open(db2, 'w', encoding='UTF-8') as file2:
+    json.dump(list,file2)
+
+print(list)
